@@ -1,0 +1,13 @@
+configs:
+  params:
+    server.insecure: true
+server:
+  ingress:
+    enabled: true
+    controller: generic
+    labels: {}
+    annotations:
+       nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    ingressClassName: nginx
+    hostname: argo.yonatan.com
+
