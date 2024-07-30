@@ -1,0 +1,12 @@
+image:
+yamlApplicationConfig: 
+    kafka:
+      clusters:
+        - name: local
+ingress:
+  enabled: true
+  annotations: {}
+  ingressClassName: nginx
+  path: "/"
+  pathType: "Prefix"  
+  host: kafka.yonatan.com
