@@ -1,8 +1,3 @@
-image:
-yamlApplicationConfig: 
-    kafka:
-      clusters:
-        - name: local
 ingress:
   enabled: true
   annotations: {}
