@@ -2,7 +2,7 @@ yamlApplicationConfig:
    kafka:
      clusters:
        - name: kafka-bitnami
-         bootstrapServers: kafka-bitnami-controller-headless:9092
+         bootstrapServers: kafka-controller-headless:9092
 ingress:
   enabled: true
   annotations: {}
