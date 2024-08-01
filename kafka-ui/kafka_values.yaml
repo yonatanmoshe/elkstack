@@ -2,7 +2,17 @@ yamlApplicationConfig:
    kafka:
      clusters:
        - name: sys1.7
-         bootstrapServers: kafka-bitnami-controller-headless:9092
+         bootstrapServers: kafka-bitnami-controller-headless
+  # spring:
+  #   security:
+  #     oauth2:
+  # auth:
+  #   type: disabled
+  # management:
+yamlApplicationConfigConfig
+  #   health:
+  #     ldap:
+  #       enabled: false
 ingress:
   enabled: true
   annotations: {}
