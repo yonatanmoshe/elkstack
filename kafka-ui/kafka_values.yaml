@@ -1,4 +1,3 @@
-existingConfigMap: ""
 yamlApplicationConfig:  
    kafka:
      clusters:
