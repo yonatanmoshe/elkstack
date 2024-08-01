@@ -3,16 +3,6 @@ yamlApplicationConfig:
      clusters:
        - name: sys1.7
          bootstrapServers: kafka-service:9092
-  # spring:
-  #   security:
-  #     oauth2:
-  # auth:
-  #   type: disabled
-  # management:
-yamlApplicationConfigConfig
-  #   health:
-  #     ldap:
-  #       enabled: false
 ingress:
   enabled: true
   annotations: {}
