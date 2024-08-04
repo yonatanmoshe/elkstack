@@ -1,4 +1,30 @@
 ## Kafka listeners configuration
+kafka:
+  config:
+    # Listeners configuration
+    listeners: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+    advertised.listeners: INSIDE://kafka-inside:9093,OUTSIDE://kafka-outside:9092
+    listener.security.protocol.map: INSIDE:PLAINTEXT,OUTSIDE:SASL_PLAINTEXT
+    security.protocol: SASL_PLAINTEXT
+    sasl.enabled.mechanisms: PLAIN
+    sasl.mechanism.inter.broker.protocol: PLAIN
+    inter.broker.listener.name: OUTSIDE
+
+  ## Authentication configuration
+  auth:
+    enabled: true
+    clientProtocol: sasl
+    interBrokerProtocol: sasl
+    sasl:
+      jaas:
+        clientUsers:
+        - user
+        clientPassword:
+        - password
+        interBrokerUser:
+        - user
+        interBrokerPassword:
+        - password
 listeners:
   client:
     containerPort: 9092
