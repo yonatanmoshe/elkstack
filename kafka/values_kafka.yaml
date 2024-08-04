@@ -51,7 +51,8 @@ kafka:
     "offsets.topic.replication.factor": 3
     "transaction.state.log.replication.factor": 3
     "transaction.state.log.min.isr": 2
-
+broker:
+  replicaCount: 3
 listeners:
   client:
     containerPort: 9092
