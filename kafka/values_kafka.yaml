@@ -17,13 +17,13 @@ kafka:
     sasl:
       jaas:
         clientUsers:
-        - user
+        - dev41
         clientPassword:
-        - password
+        - 42
         interBrokerUser:
-        - user
+        - dev01
         interBrokerPassword:
-        - password
+        - 42
 listeners:
   client:
     containerPort: 9092
