@@ -1,0 +1,33 @@
+controller:
+  replicaCount: 3
+  controllerOnly: false
+
+broker:
+  replicaCount: 3
+  service:
+  type: ClusterIP
+  ports:
+    client: 9092
+    controller: 9093
+    interbroker: 9094
+    external: 9095
+
+    image:
+      registry: docker.io
+      repository: bitnami/kubectl
+      tag: 1.30.3-debian-12-r3
+    service:
+      type: LoadBalancer
+      ports:
+        external: 9094
+
+  image:
+    registry: docker.io
+    repository: bitnami/os-shell
+    tag: 12-debian-12-r26
+
+    image:
+      registry: docker.io
+      repository: bitnami/jmx-exporter
+      tag: 1.0.1-debian-12-r5
+
