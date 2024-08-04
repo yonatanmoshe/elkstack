@@ -1,4 +1,3 @@
-## Kafka listeners configuration
 kafka:
   config:
     # Listeners configuration
