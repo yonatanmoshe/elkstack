@@ -1,8 +1,8 @@
 controller:
   replicaCount: 3
 
-broker:
-  replicaCount: 3
+# broker:
+#   replicaCount: 3
 
 
 listeners:
