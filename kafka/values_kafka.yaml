@@ -78,3 +78,37 @@ externalAccess:
   enabled: true
   service:
     type: LoadBalancer
+controller:
+  # readinessProbe & livenessProbe 
+  readinessProbe:
+    tcpSocket:
+      port: 9092
+    timeoutSeconds: 5
+    periodSeconds: 5
+    initialDelaySeconds: 45
+  livenessProbe:
+    exec:
+      command:
+      - sh
+      - -c
+      - "kafka-broker-api-versions.sh --bootstrap-server=localhost:9092"
+    timeoutSeconds: 5
+    periodSeconds: 5
+    initialDelaySeconds: 60
+    broker:
+    # readinessProbe & livenessProbe 
+  readinessProbe:
+    tcpSocket:
+      port: 9092
+    timeoutSeconds: 5
+    periodSeconds: 5
+    initialDelaySeconds: 45
+  livenessProbe:
+    exec:
+      command:
+      - sh
+      - -c
+      - "kafka-broker-api-versions.sh --bootstrap-server=localhost:9092"
+    timeoutSeconds: 5
+    periodSeconds: 5
+    initialDelaySeconds: 60
