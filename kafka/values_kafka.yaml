@@ -1,14 +1,9 @@
 kafka:
-  # Kafka image configuration
   image:
     repository: bitnami/kafka
     tag: latest
-
-  # Kafka broker settings
   replicas: 3
   resources: {}
-
-  # Configuration for Kafka brokers
   config:
     listeners: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
     advertised.listeners: INSIDE://kafka-inside:9093,OUTSIDE://kafka-outside:9092
@@ -21,8 +16,6 @@ kafka:
     log.retention.hours: "168"
     log.segment.bytes: "1073741824"
     num.partitions: "1"
-
-  # Readiness and liveness probes
   readinessProbe:
     tcpSocket:
       port: 9093
@@ -31,7 +24,6 @@ kafka:
     timeoutSeconds: 5
     successThreshold: 1
     failureThreshold: 3
-
   livenessProbe:
     tcpSocket:
       port: 9093
@@ -70,7 +62,7 @@ kafka:
     enabled: true
     service:
       type: LoadBalancer
-      loadBalancerClass: "nginx" # Specify your load balancer class here
+      loadBalancerClass: nginx
       ports:
       - port: 9092
         targetPort: 9092
@@ -80,9 +72,9 @@ kafka:
         targetPort: 9094
       - port: 9095
         targetPort: 9095
-
-  # Service configuration
   service:
     type: ClusterIP
     port: 9092
     targetPort: 9092
+broker:
+  replicaCount: 3
