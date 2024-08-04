@@ -1,6 +1,7 @@
+tls:
+  sslClientAuth: none
 #zookeeper:
 # enabled: true
-
 replicaCount: 3
 
 auth:
@@ -18,3 +19,4 @@ externalAccess:
   enabled: true
   service:
     type: LoadBalancer
+
