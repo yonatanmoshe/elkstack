@@ -8,7 +8,7 @@ kafka:
     # Remove SASL configurations
     sasl.enabled.mechanisms: ""
     sasl.mechanism.inter.broker.protocol: ""
-    inter.broker.listener.name: OUTSIDE
+    inter.broker.listener.name: INSIDE
 
   # Authentication configuration
   auth:
