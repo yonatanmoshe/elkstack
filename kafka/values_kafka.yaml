@@ -1,7 +1,7 @@
 tls:
   sslClientAuth: none
-#zookeeper:
-# enabled: true
+  zookeeper:
+    enabled: true
 replicaCount: 3
 
 auth:
