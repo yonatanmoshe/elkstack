@@ -1,14 +1,13 @@
+listeners:
+securityProtocolMap: "PLAINTEXT:PLAINTEXT,SASL_SSL:SASL_SSL"
 tls:
   sslClientAuth: none
   zookeeper:
     enabled: true
 replicaCount: 3
-
 auth:
   clientProtocol: plaintext
   interBrokerProtocol: plaintext
-
-# Specify the broker configuration
 kafka:
   configurationOverrides:
     "offsets.topic.replication.factor": 3
