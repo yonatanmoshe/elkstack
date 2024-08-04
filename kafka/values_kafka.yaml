@@ -1,4 +1,16 @@
 kafka:
+  replicas: 3
+  image:
+    repository: bitnami/kafka
+    tag: latest
+  readinessProbe:
+    tcpSocket:
+      port: 9093
+    initialDelaySeconds: 10
+    periodSeconds: 5
+    timeoutSeconds: 3
+    successThreshold: 1
+    failureThreshold: 3
   config:
     # Listeners configuration
     listeners: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
