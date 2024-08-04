@@ -1,5 +1,5 @@
-zookeeper:
-  enabled: true
+#zookeeper:
+# enabled: true
 
 replicaCount: 3
 
